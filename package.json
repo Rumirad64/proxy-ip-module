@@ -1,0 +1,44 @@
+{
+  "name": "proxy-ip-module",
+  "version": "0.0.1",
+  "description": "detect proxy ip addresses",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "repository": {
+    "url": "git://github.com/Rumirad64/proxy-ip-module.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --exec npx ts-node --inspect src/index.ts",
+    "dev:inspect": "nodemon --exec npx ts-node-dev src/index.ts --debug --inspect=4321",
+    "lint": "eslint --ext .ts src",
+    "lint:fix": "eslint --ext .ts src --fix",
+    "start": "node dist/index.js",
+    "build": "npm run remove-build && npm run build:esm && npm run build:cjs && npm pack",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "remove-build": "rm -rf dist && rm -f *.tgz"
+  },
+  "author": "Rumirad64",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.11.0",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "eslint": "^8.25.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.3.0",
+    "eslint-plugin-promise": "^6.1.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "nodemon": "^2.0.20",
+    "redis": "^4.3.1",
+    "ts-node": "^10.9.1"
+  }
+}
