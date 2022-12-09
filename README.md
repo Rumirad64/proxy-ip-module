@@ -1,4 +1,4 @@
-# proxy-ip-module
+# proxy-detect-module
 
 * This module is used to detect the IP address if an IP address is a proxy IP address.
 * It will store the proxy IP address in a MongoDB database and a Redis database.
@@ -21,7 +21,7 @@
 ## Installation
 
 ```bash
-yarn add proxy-ip-module
+yarn add proxy-detect-module
 ```
 
 ## Exposed Methods
@@ -53,7 +53,7 @@ proxyDetect.DeleteProxyIP(id: string) : Promise<{ resultM : boolean, resultR : b
 
 ```typescript
 // importing the module
-import { ProxyDetect } from 'proxy-ip-module';
+import { ProxyDetect } from 'proxy-detect-module';
 
 
 export class DetectService {

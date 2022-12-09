@@ -228,7 +228,7 @@ class ProxyDetect {
   public async GetProxyList(page: number, limit: number, search: string): Promise<any> {
     const result = await ProxyIp.paginate(
       { ip: { $regex: search, $options: 'i' } },
-      { page, limit, sort: { CreatedAt: -1 } },
+      { page, limit, sort: { updatedAt: -1 } },
     );
     return result;
   }
