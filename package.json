@@ -1,5 +1,5 @@
 {
-  "name": "proxy-ip-module",
+  "name": "proxy-detect-module",
   "version": "0.1.0",
   "description": "detect proxy ip addresses",
   "main": "dist/cjs/index.js",
